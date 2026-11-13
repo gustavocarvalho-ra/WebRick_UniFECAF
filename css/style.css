@@ -1,0 +1,482 @@
+
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+    --background: #080d0b;
+    --background-secondary: #101914;
+    --card-background: #15221a;
+    --primary: #97ce4c;
+    --primary-hover: #b5f76b;
+    --secondary: #b46cff;
+    --text: #f5f5f5;
+    --text-secondary: #a5b3a8;
+    --border: rgba(151, 206, 76, 0.2);
+    --danger: #ff5c5c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ========================================
+   2. CABEÇALHO
+======================================== */
+
+.header {
+    width: 100%;
+    background-color: rgba(8, 13, 11, 0.95);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+}
+
+.header-content {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.logo small {
+    font-size: 11px;
+    color: var(--text-secondary);
+    letter-spacing: 4px;
+}
+
+.navigation {
+    display: flex;
+    gap: 30px;
+}
+
+.navigation a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: var(--primary);
+}
+
+
+/* ========================================
+   3. SEÇÃO INICIAL (HERO)
+======================================== */
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            ellipse at 80% 50%,
+            rgba(151, 206, 76, 0.12),
+            transparent 50%
+        ),
+        linear-gradient(
+            135deg,
+            #101b14,
+            #080d0b
+        );
+
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-content {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.hero-text {
+    max-width: 750px;
+}
+
+.hero-tag,
+.section-tag {
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 20px 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(30px, 5vw, 55px);
+    line-height: 1.3;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--primary);
+    text-shadow: 0 0 25px rgba(151, 206, 76, 0.3);
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: #10190b;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(151, 206, 76, 0.25);
+}
+
+
+/* ========================================
+   4. SEÇÃO DE PERSONAGENS
+======================================== */
+
+.characters-section {
+    padding: 90px 0;
+    background-color: var(--background);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    margin: 15px 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(25px, 4vw, 36px);
+}
+
+.section-heading p,
+.about-content p {
+    color: var(--text-secondary);
+}
+
+
+/* ========================================
+   5. PESQUISA E FILTROS
+======================================== */
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filters input,
+.filters select {
+    min-height: 48px;
+    padding: 0 15px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+    background-color: var(--background-secondary);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.filters input {
+    width: 100%;
+    max-width: 400px;
+}
+
+.filters select {
+    min-width: 190px;
+    cursor: pointer;
+}
+
+.filters input:focus,
+.filters select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(151, 206, 76, 0.15);
+}
+
+.filters input::placeholder {
+    color: var(--text-secondary);
+}
+
+
+/* ========================================
+   6. GRID DE PERSONAGENS
+======================================== */
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* ========================================
+   7. CARDS DOS PERSONAGENS
+======================================== */
+
+.character-card {
+    overflow: hidden;
+    background-color: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.character-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px rgba(151, 206, 76, 0.12);
+}
+
+.character-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.character-info {
+    padding: 18px;
+}
+
+.character-info h3 {
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    color: var(--primary);
+}
+
+.character-info p {
+    margin: 5px 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.character-status {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    background-color: rgba(151, 206, 76, 0.15);
+    color: var(--primary);
+}
+
+.character-status.dead {
+    background-color: rgba(255, 92, 92, 0.15);
+    color: var(--danger);
+}
+
+.character-status.unknown {
+    background-color: rgba(180, 108, 255, 0.15);
+    color: var(--secondary);
+}
+
+
+/* ========================================
+   8. CARREGAMENTO E MENSAGENS
+======================================== */
+
+.loading,
+.error-message {
+    padding: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.loading {
+    color: var(--primary);
+}
+
+.error-message {
+    color: var(--danger);
+}
+
+
+/* ========================================
+   9. BOTÃO CARREGAR MAIS
+======================================== */
+
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+
+/* ========================================
+   10. SEÇÃO SOBRE
+======================================== */
+
+.about-section {
+    padding: 80px 0;
+    background-color: var(--background-secondary);
+    border-top: 1px solid var(--border);
+}
+
+.about-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-content p {
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   11. RODAPÉ
+======================================== */
+
+.footer {
+    padding: 30px 0;
+    background-color: #050806;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.footer a {
+    color: var(--primary);
+    font-size: 13px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   12. RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .characters-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .header-content {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    .navigation {
+        gap: 20px;
+    }
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .characters-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters input,
+    .filters select {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .character-info {
+        padding: 12px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation {
+        gap: 14px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+}

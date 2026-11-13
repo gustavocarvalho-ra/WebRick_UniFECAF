@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore o universo de Rick and Morty e descubra seus personagens favoritos.">
+
+    <title>Rick and Morty Explorer</title>
+
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonte do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Arquivo JavaScript -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container header-content">
+
+            <a href="#" class="logo">
+                <span>RICK AND MORTY</span>
+                <small>EXPLORER</small>
+            </a>
+
+            <nav class="navigation">
+                <a href="#inicio">Início</a>
+                <a href="#personagens">Personagens</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Seção inicial -->
+        <section class="hero" id="inicio">
+            <div class="container hero-content">
+
+                <div class="hero-text">
+                    <span class="hero-tag">BEM-VINDO AO MULTIVERSO</span>
+
+                    <h1>
+                        EXPLORE O UNIVERSO DE
+                        <span>RICK AND MORTY</span>
+                    </h1>
+
+                    <p>
+                        Descubra personagens, explore diferentes dimensões
+                        e conheça os habitantes mais curiosos do universo
+                        de Rick and Morty.
+                    </p>
+
+                    <a href="#personagens" class="btn-primary">
+                        EXPLORAR PERSONAGENS
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Seção de personagens -->
+        <section class="characters-section" id="personagens">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-tag">BANCO DE DADOS INTERGALÁCTICO</span>
+
+                    <h2>PERSONAGENS</h2>
+
+                    <p>
+                        Conheça os personagens que habitam este
+                        universo extraordinário.
+                    </p>
+                </div>
+
+                <!-- Área de pesquisa e filtros -->
+                <div class="filters">
+
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Pesquisar personagem..."
+                        aria-label="Pesquisar personagem pelo nome"
+                    >
+
+                    <select id="status-filter" aria-label="Filtrar por status">
+                        <option value="">Todos os status</option>
+                        <option value="Alive">Vivo</option>
+                        <option value="Dead">Morto</option>
+                        <option value="unknown">Desconhecido</option>
+                    </select>
+
+                </div>
+
+                <!-- Mensagem de carregamento -->
+                <p id="loading" class="loading">
+                    Carregando personagens...
+                </p>
+
+                <!-- Mensagem de erro -->
+                <p id="error-message" class="error-message hidden">
+                    Não foi possível carregar os personagens.
+                </p>
+
+                <!-- Cards criados dinamicamente pelo JavaScript -->
+                <div id="characters-container" class="characters-grid">
+                </div>
+
+                <!-- Botão para carregar mais personagens -->
+                <div class="load-more-container">
+                    <button id="load-more" class="btn-primary hidden">
+                        CARREGAR MAIS
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Seção sobre o projeto -->
+        <section class="about-section" id="sobre">
+
+            <div class="container about-content">
+
+                <span class="section-tag">SOBRE O PROJETO</span>
+
+                <h2>UM UNIVERSO DE POSSIBILIDADES</h2>
+
+                <p>
+                    O Rick and Morty Explorer é um projeto desenvolvido
+                    utilizando HTML, CSS e JavaScript, com integração
+                    à Rick and Morty API para apresentar informações
+                    sobre os personagens da série de forma dinâmica.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+
+        <div class="container">
+            <p>
+                Rick and Morty Explorer |
+                Desenvolvido para fins acadêmicos.
+            </p>
+
+            <a href="https://rickandmortyapi.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Dados fornecidos pela Rick and Morty API
+            </a>
+        </div>
+
+    </footer>
+
+</body>
+</html>
